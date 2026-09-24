@@ -15,3 +15,6 @@ MonoBehaviour:
   itemName: 'Lamb Over Rice '
   price: 7
   itemIcon: {fileID: 0}
+  ingredients:
+  - {fileID: 11400000, guid: 684482b79ded35847b3c460914d33f24, type: 2}
+  - {fileID: 11400000, guid: b80860bdb395e0a4885ff23ae71261f3, type: 2}

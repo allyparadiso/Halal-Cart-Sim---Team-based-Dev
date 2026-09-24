@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e68db20a03f2294a8d94fbce49f7eef, type: 3}
   m_Name: ChickenOverRice
   m_EditorClassIdentifier: Assembly-CSharp::FoodItem
-  itemName: 
-  price: 0
+  itemName: Chicken Over Rice
+  price: 6
   itemIcon: {fileID: 0}
+  ingredients:
+  - {fileID: 11400000, guid: e5eed24dbc176074395d2b13dad0b481, type: 2}
+  - {fileID: 11400000, guid: b80860bdb395e0a4885ff23ae71261f3, type: 2}
