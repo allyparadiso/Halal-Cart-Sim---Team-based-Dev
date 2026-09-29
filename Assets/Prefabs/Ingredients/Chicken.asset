@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Chicken
   m_EditorClassIdentifier: Assembly-CSharp::Ingredients
   ingredientName: Chicken
-  ingredientID: 1
+  ingredientID: Chicken34d27e8e-d3a6-4a78-9959-f86f6330e33f
   ingredientIcon: {fileID: 0}

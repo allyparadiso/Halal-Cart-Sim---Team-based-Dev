@@ -6,7 +6,7 @@ using UnityEngine;
 public class Drinks : ScriptableObject
 {
     public string drinkName;
-    [SerializeField] private string drinkID;
+    public string drinkID;
     public float price;
     public Sprite drinkIcon;
 

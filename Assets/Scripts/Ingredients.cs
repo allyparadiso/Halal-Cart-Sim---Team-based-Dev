@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ingredients : ScriptableObject
 {
     public string ingredientName;
-    [SerializeField] private string ingredientID;
+    public string ingredientID;
     public Sprite ingredientIcon;
 
     private void OnValidate()
