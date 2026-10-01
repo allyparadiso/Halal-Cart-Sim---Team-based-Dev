@@ -10,14 +10,46 @@ public class DragAndDrop : MonoBehaviour
     [SerializeField] private GameObject dragItemPrefab;
     private GameObject currentDragObject;
     private Camera mainCamera;
-    private bool isDragging = false;
+    //private bool isDragging = false;
+    Vector3 mousePosition;
+
+    public GameObject parentContainer;
 
     private void Start()
     {
         mainCamera = Camera.main;
     }
 
+    private Vector3 GetMousePos()
+    {
+        return Camera.main.WorldToScreenPoint(transform.position);
+    }
+
     private void OnMouseDown()
+    {
+        mousePosition = Input.mousePosition - GetMousePos();
+        Vector3 spawnPosition = parentContainer.transform.position;
+        if (spawnPosition != Vector3.zero)
+        {
+            currentDragObject = Instantiate(dragItemPrefab, spawnPosition, Quaternion.identity);
+
+            currentObjectCollider = currentDragObject.GetComponentInChildren<Collider>();
+            //isDragging = true;
+        }
+    }
+
+    private void OnMouseDrag()
+    {
+        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePosition);
+        Vector3 dragPosition = GetMousePos();
+        if (dragPosition != Vector3.zero)
+        {
+            currentDragObject.transform.position = dragPosition;
+        }
+        ;
+    }
+
+    /*private void OnMouseDown()
     {
         Vector3 spawnPosition = GetMouseWorldPos();
         if (spawnPosition != Vector3.zero)
@@ -67,7 +99,8 @@ public class DragAndDrop : MonoBehaviour
         }
 
         return Vector3.zero;
-    }
+        
+    }*/
 
     //add dropped ingredients to list of added ingredients
 }
