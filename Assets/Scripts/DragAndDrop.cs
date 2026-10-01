@@ -2,20 +2,72 @@ using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour
 {
-    Transform objectParent;
+    //[SerializeField] private LayerMask environment;
+    [SerializeField] private LayerMask spawnLayer;
+    [SerializeField] private LayerMask draggableLayers;
 
-    public float minDropDistance = 2f;
-    public float maxDropDistance = 3f;
-    void Update()
+    private Collider currentObjectCollider;
+    [SerializeField] private GameObject dragItemPrefab;
+    private GameObject currentDragObject;
+    private Camera mainCamera;
+    private bool isDragging = false;
+
+    private void Start()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
-            {
+        mainCamera = Camera.main;
+    }
 
-            }
+    private void OnMouseDown()
+    {
+        Vector3 spawnPosition = GetMouseWorldPos();
+        if (spawnPosition != Vector3.zero)
+        {
+            currentDragObject = Instantiate(dragItemPrefab, spawnPosition, Quaternion.identity);
+
+            currentObjectCollider = currentDragObject.GetComponentInChildren<Collider>();
+            isDragging = true;
         }
     }
+
+    private void Update()
+    {
+        Dragging();
+    }
+
+    private void Dragging()
+    {
+
+        if (isDragging && currentDragObject != null)
+        {
+            if (Input.GetMouseButton(0))
+            {
+                Vector3 dragPosition = GetMouseWorldPos();
+                if (dragPosition != Vector3.zero)
+                {
+                    currentDragObject.transform.position = dragPosition;
+                }
+            }
+        }
+
+        else if (Input.GetMouseButtonUp(0))
+        {
+            isDragging = false;
+            currentObjectCollider = null;
+            currentDragObject = null;
+        }
+    }
+
+    private Vector3 GetMouseWorldPos()
+    {
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, draggableLayers))
+        {
+            return hit.point;
+        }
+
+        return Vector3.zero;
+    }
+
+    //add dropped ingredients to list of added ingredients
 }

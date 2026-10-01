@@ -34,4 +34,14 @@ public class Customer : MonoBehaviour
             Debug.Log($"{gameObject.name} ordered: {currentSauce.sauceName}");
         }
     }
+
+    public FoodItem GetActiveFood()
+    {
+        return currentOrder;
+    }
+
+    public Sauces GetActiveSauce()
+    {
+        return currentSauce;
+    }
 }
