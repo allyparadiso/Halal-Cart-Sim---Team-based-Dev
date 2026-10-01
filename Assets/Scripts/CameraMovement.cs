@@ -5,7 +5,7 @@ public class CameraMovement : MonoBehaviour
 {
     public Camera mainCamera;
 
-    private void Update()
+    /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.W)) //rotate to front wall
         {
@@ -23,5 +23,10 @@ public class CameraMovement : MonoBehaviour
         {
             mainCamera.transform.rotation = Quaternion.Euler(0, 90, 0);
         }
+    }*/
+
+    private void Update()
+    {
+        
     }
 }
