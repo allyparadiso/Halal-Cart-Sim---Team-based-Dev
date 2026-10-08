@@ -2,16 +2,22 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
+//controls the money
+
+
 public class Money : MonoBehaviour
 {
-    public int money;
+    public Money Instance;
+    public float money;
     private Customer customerScript;
     FoodItem currentFood;
     private float foodPrice;
+    private float originalPercent = 100f;
+    private float percentagePenalty = 5f;
     private void Start()
     {
+        if (Instance == null) Instance = this;
         money = 0;
-
     }
     public void GetActiveOrderItems()
     {
@@ -27,17 +33,16 @@ public class Money : MonoBehaviour
         GetActiveOrderItems();
     }
 
-    public void AddMoney(int moneyToAdd)
+    public void AddMoney(float moneyToAdd)
     {
-
-        //add all prices of items to get moneyToAdd
-        // if order is incorrect, money += moneyToAdd - (whatever func that can calculate 5% of moneyToAdd and subract it from total moneyToAdd)
-        // else:
+        moneyToAdd = foodPrice;
         money += moneyToAdd;
+        //need to add the drink price too
     }
 
-    public void SubtractMoney(int moneyToSubtract)
+    public void SubtractMoney(float moneyToSubtract)
     {
-        
+        moneyToSubtract = originalPercent * (1f - (percentagePenalty / 100f));
+        money += foodPrice - moneyToSubtract;
     }
 }

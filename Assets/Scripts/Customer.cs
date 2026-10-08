@@ -1,8 +1,11 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+//
+
 public class Customer : MonoBehaviour
 {
+    public Customer Instance;
     public List<FoodItem> availableMenu; //list of possible orders
     public FoodItem currentOrder; //NPC's current order
     public List<Sauces> availableSauces;
@@ -11,6 +14,7 @@ public class Customer : MonoBehaviour
 
     private void Start() //change this to a method that triggers after npc walks up to window
     {
+        if (Instance == null) Instance = this;
         ChooseRandomFood();
         ChooseRandomSauce();
     }

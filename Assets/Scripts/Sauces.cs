@@ -1,6 +1,9 @@
 using System;
 using UnityEngine;
 
+//script for creating Sauce scriptable objects
+
+
 [CreateAssetMenu(fileName = "NewSauce", menuName = "Scriptable Objects/New Sauce")]
 public class Sauces : ScriptableObject
 {

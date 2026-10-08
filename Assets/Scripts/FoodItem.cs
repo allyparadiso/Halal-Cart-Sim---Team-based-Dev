@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+//script for creating Food scriptable objects
+
 [CreateAssetMenu(fileName = "NewFoodItem", menuName = "Scriptable Objects/New Food Item")] //right-click in the project section, click create, then click Scriptable Objects menu to add new dish
 public class FoodItem : ScriptableObject
 {
@@ -9,7 +11,7 @@ public class FoodItem : ScriptableObject
     public string foodID;
     public float price;
     public Sprite foodIcon;
-    public List<Ingredients> ingredients;
+    public List<Ingredients> neededIngredients;
 
     private void OnValidate()
     {
