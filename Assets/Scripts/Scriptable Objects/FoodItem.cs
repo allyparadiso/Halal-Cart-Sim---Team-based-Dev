@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-//script for creating Food scriptable objects
+// Script for creating Food scriptable objects.
 
 [CreateAssetMenu(fileName = "NewFoodItem", menuName = "Scriptable Objects/New Food Item")] //right-click in the project section, click create, then click Scriptable Objects menu to add new dish
 public class FoodItem : ScriptableObject

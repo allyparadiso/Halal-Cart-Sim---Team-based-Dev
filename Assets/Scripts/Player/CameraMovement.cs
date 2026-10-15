@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-//
+// Controls the camera movement of the player, turning it 90 degrees to the left or right depending on player input.
 
 public class CameraMovement : MonoBehaviour
 {

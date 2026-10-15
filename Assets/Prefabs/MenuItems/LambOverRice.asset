@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e68db20a03f2294a8d94fbce49f7eef, type: 3}
   m_Name: LambOverRice
   m_EditorClassIdentifier: Assembly-CSharp::FoodItem
-  itemName: 'Lamb Over Rice '
+  foodName: Lamb Over Rice
+  foodID: 326e42f5-9a27-4fe3-808a-05ef13f3513e
   price: 7
-  itemIcon: {fileID: 0}
-  ingredients:
+  foodIcon: {fileID: 0}
+  neededIngredients:
   - {fileID: 11400000, guid: 684482b79ded35847b3c460914d33f24, type: 2}
   - {fileID: 11400000, guid: b80860bdb395e0a4885ff23ae71261f3, type: 2}

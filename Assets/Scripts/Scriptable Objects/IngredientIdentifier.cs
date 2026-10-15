@@ -1,6 +1,6 @@
 using UnityEngine;
 
-//this script is just a way to connect the physical ingredient prefab to the Ingredients scriptable object
+// Script to connect the physical Ingredient Prefab to the Ingredients scriptable object.
 
 public class IngredientIdentifier : MonoBehaviour
 {

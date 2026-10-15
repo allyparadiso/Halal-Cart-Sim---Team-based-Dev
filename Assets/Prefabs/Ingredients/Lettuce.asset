@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73747985b1936334ea829d119db5c779, type: 3}
   m_Name: Lettuce
   m_EditorClassIdentifier: Assembly-CSharp::Ingredients
-  ingredientName: 
+  ingredientName: Lettuce
   ingredientID: 2b2d61c1-cc56-4e1b-9792-80398fdc1baa
   ingredientIcon: {fileID: 0}

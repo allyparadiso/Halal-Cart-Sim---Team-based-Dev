@@ -2,8 +2,8 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
-//controls the money
-
+// Controls the money(?)
+// JM: One question could be "Q: For the Money, is it simply used as a score or something else?"
 
 public class Money : MonoBehaviour
 {
@@ -14,11 +14,13 @@ public class Money : MonoBehaviour
     private float foodPrice;
     private float originalPercent = 100f;
     private float percentagePenalty = 5f;
+
     private void Start()
     {
         if (Instance == null) Instance = this;
         money = 0;
     }
+
     public void GetActiveOrderItems()
     {
         currentFood = customerScript.GetActiveFood();
@@ -37,7 +39,7 @@ public class Money : MonoBehaviour
     {
         moneyToAdd = foodPrice;
         money += moneyToAdd;
-        //need to add the drink price too
+        // Need to add the drink price.
     }
 
     public void SubtractMoney(float moneyToSubtract)

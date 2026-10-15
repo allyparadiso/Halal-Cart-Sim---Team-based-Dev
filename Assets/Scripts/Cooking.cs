@@ -1,7 +1,9 @@
 using UnityEngine;
 
-//timer for time cooked
-//grill behavior
+// JM: Fully unfinished script, used for the cooking system.
+
+// Timer for time cooked.
+// Grill behavior.
 
 public class Cooking : MonoBehaviour
 {

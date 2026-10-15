@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-//script for creating Drink scriptable objects
+// Script for creating Drink scriptable objects.
 
 [CreateAssetMenu(fileName = "NewDrink", menuName = "Scriptable Objects/New Drink")]
 public class Drinks : ScriptableObject

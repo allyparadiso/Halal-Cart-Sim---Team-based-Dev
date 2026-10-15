@@ -2,9 +2,9 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
-//
+// Put this script on all the Ingredient Container Objects.
 
-public class DragAndDrop : MonoBehaviour //put this script on all the ingredient container objects
+public class DragAndDrop : MonoBehaviour 
 {
     public Plating platingScript;
     Vector3 spawnPosition;
@@ -76,11 +76,11 @@ public class DragAndDrop : MonoBehaviour //put this script on all the ingredient
 
     private void OnMouseUp()
     {
-        if (inPlatingArea == false) //if let go when not within the plating area collider, it sends it back to the spawn point and destroys the object
+        if (inPlatingArea == false) // If let go when not within the plating area collider, it sends it back to the spawn point and destroys the object
         {
             currentDragObject.transform.position = spawnPosition;
         }
-        else //if let go within the collider, add object to list of added ingredients
+        else // If let go within the collider, add object to list of added ingredients
         {
             platingScript.Instance.AddIngredient(currentDragObject.GetComponent<Ingredients>()); //currently doesnt work
         }

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-//script for creating Ingredient scriptable objects
+// Script for creating Ingredient scriptable objects.
 
 [CreateAssetMenu(fileName = "NewIngredient", menuName = "Scriptable Objects/New Ingredient")]
 public class Ingredients : ScriptableObject
