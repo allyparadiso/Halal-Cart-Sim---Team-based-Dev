@@ -158,27 +158,14 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &73458880 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 3322178545597086851, guid: 0cefcabdf88cbc442a91becac93634dd, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3322178545597086851, guid: 7df53cae199647f4fa49c42a2c1c9c1d, type: 3}
   m_PrefabInstance: {fileID: 7497382614732570428}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &73458884 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 1321393086835863147, guid: 0cefcabdf88cbc442a91becac93634dd, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1321393086835863147, guid: 7df53cae199647f4fa49c42a2c1c9c1d, type: 3}
   m_PrefabInstance: {fileID: 7497382614732570428}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &73458885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 73458880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 510f87ad7d38d7f4cb3bc7c64245f444, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::IngredientIdentifier
-  ingredientSO: {fileID: 11400000, guid: b80860bdb395e0a4885ff23ae71261f3, type: 2}
 --- !u!1 &130266582
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,11 +443,13 @@ MonoBehaviour:
   platingScript: {fileID: 1173472172}
   dragItemPrefab: {fileID: 0}
   parentContainer: {fileID: 396489591}
+  playerView: {fileID: 0}
   platingCollider: {fileID: 1173472170}
   frontWall: {fileID: 130266584}
   rightWall: {fileID: 2006776906}
   backWall: {fileID: 594303372}
   leftWall: {fileID: 1798568451}
+  inPlatingArea: 0
 --- !u!1 &439130470
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,11 +520,13 @@ MonoBehaviour:
   platingScript: {fileID: 1173472172}
   dragItemPrefab: {fileID: 73458880}
   parentContainer: {fileID: 439130470}
+  playerView: {fileID: 1676977841}
   platingCollider: {fileID: 1173472170}
   frontWall: {fileID: 130266584}
   rightWall: {fileID: 2006776906}
   backWall: {fileID: 594303372}
   leftWall: {fileID: 1798568451}
+  inPlatingArea: 0
 --- !u!1 &445541946
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,6 +537,7 @@ GameObject:
   m_Component:
   - component: {fileID: 445541948}
   - component: {fileID: 445541947}
+  - component: {fileID: 445541949}
   m_Layer: 0
   m_Name: Grill
   m_TagString: Grill
@@ -589,6 +581,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 949024367}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!54 &445541949
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445541946}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &531351180
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,13 +863,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DragAndDrop
   platingScript: {fileID: 1173472172}
-  dragItemPrefab: {fileID: 73458880}
+  dragItemPrefab: {fileID: 0}
   parentContainer: {fileID: 675103640}
+  playerView: {fileID: 0}
   platingCollider: {fileID: 1173472170}
   frontWall: {fileID: 130266584}
   rightWall: {fileID: 2006776906}
   backWall: {fileID: 594303372}
   leftWall: {fileID: 1798568451}
+  inPlatingArea: 0
 --- !u!1 &746767755
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,11 +1004,13 @@ MonoBehaviour:
   platingScript: {fileID: 1173472172}
   dragItemPrefab: {fileID: 0}
   parentContainer: {fileID: 769468194}
+  playerView: {fileID: 0}
   platingCollider: {fileID: 1173472170}
   frontWall: {fileID: 130266584}
   rightWall: {fileID: 2006776906}
   backWall: {fileID: 594303372}
   leftWall: {fileID: 1798568451}
+  inPlatingArea: 0
 --- !u!1 &935594161
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,11 +1442,13 @@ MonoBehaviour:
   platingScript: {fileID: 1173472172}
   dragItemPrefab: {fileID: 0}
   parentContainer: {fileID: 1405383573}
+  playerView: {fileID: 0}
   platingCollider: {fileID: 1173472170}
   frontWall: {fileID: 130266584}
   rightWall: {fileID: 2006776906}
   backWall: {fileID: 594303372}
   leftWall: {fileID: 1798568451}
+  inPlatingArea: 0
 --- !u!1 &1479905399
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,11 +1619,13 @@ MonoBehaviour:
   platingScript: {fileID: 1173472172}
   dragItemPrefab: {fileID: 3322178545597086851, guid: 0cefcabdf88cbc442a91becac93634dd, type: 3}
   parentContainer: {fileID: 1517102772}
+  playerView: {fileID: 0}
   platingCollider: {fileID: 1173472170}
   frontWall: {fileID: 130266584}
   rightWall: {fileID: 2006776906}
   backWall: {fileID: 594303372}
   leftWall: {fileID: 1798568451}
+  inPlatingArea: 0
 --- !u!1 &1604738568
 GameObject:
   m_ObjectHideFlags: 0
@@ -2110,70 +2137,63 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 439130471}
     m_Modifications:
-    - target: {fileID: 1321393086835863147, guid: 0cefcabdf88cbc442a91becac93634dd, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.19861002
-      objectReference: {fileID: 0}
-    - target: {fileID: 1321393086835863147, guid: 0cefcabdf88cbc442a91becac93634dd, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.19860996
-      objectReference: {fileID: 0}
-    - target: {fileID: 1321393086835863147, guid: 0cefcabdf88cbc442a91becac93634dd, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.19861
-      objectReference: {fileID: 0}
-    - target: {fileID: 1321393086835863147, guid: 0cefcabdf88cbc442a91becac93634dd, type: 3}
+    - target: {fileID: 1321393086835863147, guid: 7df53cae199647f4fa49c42a2c1c9c1d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5000005
       objectReference: {fileID: 0}
-    - target: {fileID: 1321393086835863147, guid: 0cefcabdf88cbc442a91becac93634dd, type: 3}
+    - target: {fileID: 1321393086835863147, guid: 7df53cae199647f4fa49c42a2c1c9c1d, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.009999663
       objectReference: {fileID: 0}
-    - target: {fileID: 1321393086835863147, guid: 0cefcabdf88cbc442a91becac93634dd, type: 3}
+    - target: {fileID: 1321393086835863147, guid: 7df53cae199647f4fa49c42a2c1c9c1d, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.079999566
       objectReference: {fileID: 0}
-    - target: {fileID: 1321393086835863147, guid: 0cefcabdf88cbc442a91becac93634dd, type: 3}
+    - target: {fileID: 1321393086835863147, guid: 7df53cae199647f4fa49c42a2c1c9c1d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1321393086835863147, guid: 0cefcabdf88cbc442a91becac93634dd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1321393086835863147, guid: 0cefcabdf88cbc442a91becac93634dd, type: 3}
-      propertyPath: m_LocalRotation.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1321393086835863147, guid: 0cefcabdf88cbc442a91becac93634dd, type: 3}
-      propertyPath: m_LocalRotation.z
+    - target: {fileID: 1321393086835863147, guid: 7df53cae199647f4fa49c42a2c1c9c1d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321393086835863147, guid: 7df53cae199647f4fa49c42a2c1c9c1d, type: 3}
+      propertyPath: m_LocalRotation.y
       value: -0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1321393086835863147, guid: 0cefcabdf88cbc442a91becac93634dd, type: 3}
+    - target: {fileID: 1321393086835863147, guid: 7df53cae199647f4fa49c42a2c1c9c1d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321393086835863147, guid: 7df53cae199647f4fa49c42a2c1c9c1d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 1321393086835863147, guid: 0cefcabdf88cbc442a91becac93634dd, type: 3}
+    - target: {fileID: 1321393086835863147, guid: 7df53cae199647f4fa49c42a2c1c9c1d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 270
-      objectReference: {fileID: 0}
-    - target: {fileID: 1321393086835863147, guid: 0cefcabdf88cbc442a91becac93634dd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3322178545597086851, guid: 0cefcabdf88cbc442a91becac93634dd, type: 3}
+    - target: {fileID: 1321393086835863147, guid: 7df53cae199647f4fa49c42a2c1c9c1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964363491456846513, guid: 7df53cae199647f4fa49c42a2c1c9c1d, type: 3}
+      propertyPath: playerView
+      value: 
+      objectReference: {fileID: 1676977841}
+    - target: {fileID: 3322178545597086851, guid: 7df53cae199647f4fa49c42a2c1c9c1d, type: 3}
       propertyPath: m_Name
       value: Rice
       objectReference: {fileID: 0}
+    - target: {fileID: 2964363491456846513, guid: 0cefcabdf88cbc442a91becac93634dd, type: 3}
+      propertyPath: playerView
+      value: 
+      objectReference: {fileID: 1676977841}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3322178545597086851, guid: 0cefcabdf88cbc442a91becac93634dd, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 73458885}
-  m_SourcePrefab: {fileID: 100100000, guid: 0cefcabdf88cbc442a91becac93634dd, type: 3}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7df53cae199647f4fa49c42a2c1c9c1d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

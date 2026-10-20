@@ -13,6 +13,7 @@ public class DragAndDrop : MonoBehaviour
     [Header("Prefabs")]
     [SerializeField] private GameObject dragItemPrefab; //ingredient prefab you want to spawn in the container
     public GameObject parentContainer; //target container
+    public GameObject playerView;
     public BoxCollider platingCollider;
     private GameObject currentDragObject;
 
@@ -22,7 +23,7 @@ public class DragAndDrop : MonoBehaviour
     public Transform backWall;
     public Transform leftWall;
 
-    private bool inPlatingArea;
+    public bool inPlatingArea;
 
     private void Start()
     {
@@ -43,24 +44,30 @@ public class DragAndDrop : MonoBehaviour
         return Camera.main.WorldToScreenPoint(transform.position);
     }
 
+    private void Update()
+    {
+        if (playerView.transform.rotation == Quaternion.Euler(0, 90, 0))
+        {
+            transform.rotation = Quaternion.Euler(90, 270, 0); //the specific rotation needed for the object on the right wall to be facing the camera
+        }
+        if (playerView.transform.rotation == Quaternion.Euler(0, 270, 0))
+        {
+            transform.rotation = Quaternion.Euler(90, 90, 0); //the specific rotation needed for the object on the left wall to be facing the camera
+        }
+        if (playerView.transform.rotation == Quaternion.Euler(0, 0, 0))
+        {
+            transform.rotation = Quaternion.Euler(90, 180, 0); //the specific rotation needed for the object on the front wall to be facing the camera
+        }
+        if (playerView.transform.rotation == Quaternion.Euler(0, 180, 0))
+        {
+            transform.rotation = Quaternion.Euler(90, 0, 0); //the specific rotation needed for the object on the back wall to be facing the camera
+        }
+    }
+
     private void OnMouseDown()
     {
-        if (parentContainer.transform.IsChildOf(rightWall))
-        {
-            transform.localRotation = Quaternion.Euler(90, 270, 0); //the specific rotation needed for the object on the right wall to be facing the camera
-        } 
-        if (parentContainer.transform.IsChildOf(leftWall))
-        {
-            transform.localRotation = Quaternion.Euler(90, 90, 0); //the specific rotation needed for the object on the left wall to be facing the camera
-        }
-        if (parentContainer.transform.IsChildOf(frontWall))
-        {
-            transform.localRotation = Quaternion.Euler(90, 180, 0); //the specific rotation needed for the object on the front wall to be facing the camera
-        }
-        if (parentContainer.transform.IsChildOf(backWall))
-        {
-            transform.localRotation = Quaternion.Euler(90, 0, 0); //the specific rotation needed for the object on the back wall to be facing the camera
-        }
+        // Ensures that prefab matches rotation of the wall it's parented to.
+        // JM: I'd like to change this so it matches the rotation of the camera.
 
         mousePosition = Input.mousePosition - GetMousePos();
         
@@ -74,19 +81,18 @@ public class DragAndDrop : MonoBehaviour
         Debug.DrawLine(Camera.main.transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition - mousePosition));
     }
 
-    private void OnMouseUp()
-    {
-        if (inPlatingArea == false) // If let go when not within the plating area collider, it sends it back to the spawn point and destroys the object
-        {
-            currentDragObject.transform.position = spawnPosition;
-        }
-        else // If let go within the collider, add object to list of added ingredients
-        {
-            platingScript.Instance.AddIngredient(currentDragObject.GetComponent<Ingredients>()); //currently doesnt work
-        }
-        
-        //DestroyIngredient();
-    }
+    //private void OnMouseUp()
+    //{
+    //    if (inPlatingArea == false) // If let go when not within the plating area collider, it sends it back to the spawn point and destroys the object.
+    //    {
+    //        currentDragObject.transform.position = spawnPosition;
+    //        DestroyIngredient();
+    //    }
+    //    else if (inPlatingArea == true) // If let go within the collider, add object to list of added ingredients
+    //    {
+    //        platingScript.Instance.AddIngredient(currentDragObject.GetComponent<Ingredients>()); // Currently doesn't work.
+    //    }
+    //}
 
     public void DestroyIngredient()
     {

@@ -11,9 +11,13 @@ GameObject:
   - component: {fileID: 1321393086835863147}
   - component: {fileID: 1629494812043943505}
   - component: {fileID: 5550701573942121232}
+  - component: {fileID: 4738731958736049442}
   - component: {fileID: 5647522582275408470}
+  - component: {fileID: 4419405151033503909}
+  - component: {fileID: 2964363491456846513}
+  - component: {fileID: 116628029894882008}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Rice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.36, y: 3.29, z: -3.2}
-  m_LocalScale: {x: 0.19861, y: 0.19861, z: 0.19861}
+  m_LocalScale: {x: 0.19861002, y: 0.19860996, z: 0.19861}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -91,6 +95,19 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4738731958736049442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3322178545597086851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 510f87ad7d38d7f4cb3bc7c64245f444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IngredientIdentifier
+  ingredientSO: {fileID: 11400000, guid: b80860bdb395e0a4885ff23ae71261f3, type: 2}
 --- !u!64 &5647522582275408470
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -108,8 +125,57 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &4419405151033503909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3322178545597086851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f49f1b799728e4ca99d39bb05fb7b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Cooking
+  foodUncooked: 0
+  foodCooked: 0
+  foodOvercooked: 0
+--- !u!114 &2964363491456846513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3322178545597086851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b097e073db300904b96ae41dd62d8eed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  playerView: {fileID: 0}
+--- !u!135 &116628029894882008
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3322178545597086851}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 5.0000005
+  m_Center: {x: 0, y: -0.0000038146973, z: 0.00000071525574}

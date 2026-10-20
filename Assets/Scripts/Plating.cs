@@ -3,8 +3,6 @@ using UnityEditor;
 using UnityEngine;
 using System.Linq;
 
-// JM: Another question would be "Q: What is each panel supposed to do? I understand the front panel and right panel kinda, but what about the back and left panel?"
-
 public class Plating : MonoBehaviour
 {
     public Plating Instance;
@@ -49,7 +47,7 @@ public class Plating : MonoBehaviour
             if (amountAdded < requiredCount)
             {
                 return false;
-                moneyScript.Instance.SubtractMoney(recipe.price);
+                //moneyScript.Instance.SubtractMoney(recipe.price);
             }
         }
         return true;
