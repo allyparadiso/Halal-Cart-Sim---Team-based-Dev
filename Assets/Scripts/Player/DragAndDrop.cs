@@ -44,26 +44,6 @@ public class DragAndDrop : MonoBehaviour
         return Camera.main.WorldToScreenPoint(transform.position);
     }
 
-    private void Update()
-    {
-        if (playerView.transform.rotation == Quaternion.Euler(0, 90, 0))
-        {
-            transform.rotation = Quaternion.Euler(90, 270, 0); //the specific rotation needed for the object on the right wall to be facing the camera
-        }
-        if (playerView.transform.rotation == Quaternion.Euler(0, 270, 0))
-        {
-            transform.rotation = Quaternion.Euler(90, 90, 0); //the specific rotation needed for the object on the left wall to be facing the camera
-        }
-        if (playerView.transform.rotation == Quaternion.Euler(0, 0, 0))
-        {
-            transform.rotation = Quaternion.Euler(90, 180, 0); //the specific rotation needed for the object on the front wall to be facing the camera
-        }
-        if (playerView.transform.rotation == Quaternion.Euler(0, 180, 0))
-        {
-            transform.rotation = Quaternion.Euler(90, 0, 0); //the specific rotation needed for the object on the back wall to be facing the camera
-        }
-    }
-
     private void OnMouseDown()
     {
         // Ensures that prefab matches rotation of the wall it's parented to.

@@ -18,8 +18,6 @@ public class RedragAndDrop : MonoBehaviour
     {
         Vector3 playerRotation = playerView.transform.rotation.eulerAngles;
 
-        Debug.Log(playerRotation);
-
         if (Mathf.Approximately(playerRotation.y, 90f))
         {
             transform.rotation = Quaternion.Euler(90, 270, 0);
