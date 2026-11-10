@@ -172,5 +172,12 @@ MonoBehaviour:
   ingredientLayer:
     serializedVersion: 2
     m_Bits: 128
-  ingredients: []
-  menuItems: []
+  ingredients:
+  - {fileID: 11400000, guid: eeebc8f31018103489b49310529d754f, type: 2}
+  - {fileID: 11400000, guid: c754ef8f064a81447974a1d13a4a2afe, type: 2}
+  - {fileID: 11400000, guid: 56b4109926cf78845ae28868be0fae7f, type: 2}
+  - {fileID: 11400000, guid: 7bf89153031ea814ba5da7bd21915e3c, type: 2}
+  menuItems:
+  - {fileID: 3322178545597086851, guid: f441b744d5e93d94cbbac0e08b303ebf, type: 3}
+  - {fileID: 3322178545597086851, guid: f441b744d5e93d94cbbac0e08b303ebf, type: 3}
+  detectionRadius: 1

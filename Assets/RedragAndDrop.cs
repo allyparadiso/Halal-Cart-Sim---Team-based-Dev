@@ -9,6 +9,16 @@ public class RedragAndDrop : MonoBehaviour
 
     private GameObject currentDragObject;
 
+    private void Awake()
+    {
+        playerView = GameObject.Find("Main Camera");
+
+        if (playerView == null)
+        {
+            Debug.LogError("Could not find GameObject named 'Main Camera'!");
+        }
+    }
+
     private Vector3 GetMousePos()
     {
         return Camera.main.WorldToScreenPoint(transform.position);
@@ -43,7 +53,6 @@ public class RedragAndDrop : MonoBehaviour
     private void OnMouseDown()
     {
         // Ensures that prefab matches rotation of the wall it's parented to.
-        // JM: I'd like to change this so it matches the rotation of the camera.
         Debug.Log("Attempting to drag object.");
         mousePosition = Input.mousePosition - GetMousePos();
 

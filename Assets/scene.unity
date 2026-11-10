@@ -183,6 +183,7 @@ MonoBehaviour:
     m_Bits: 0
   ingredients: []
   menuItems: []
+  detectionRadius: 5
 --- !u!1 &130266582
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,14 +308,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Customer
   Instance: {fileID: 291569040}
   availableMenu:
-  - {fileID: 11400000, guid: d010a8954f524774c91c70db96ee89c7, type: 2}
-  - {fileID: 11400000, guid: 5256c38009303df42909d57f091673ed, type: 2}
+  - {fileID: 11400000, guid: f469ce8f3315d8b4b9744657f5bbd846, type: 2}
+  - {fileID: 11400000, guid: bb48e14b20312054f915d9edbb79c4b0, type: 2}
   currentOrder: {fileID: 0}
   availableSauces:
-  - {fileID: 11400000, guid: d900531ef2b7f284e978284773b62aca, type: 2}
-  - {fileID: 11400000, guid: 078eee7dff4eeba4cbedf2aa75d75621, type: 2}
-  - {fileID: 11400000, guid: a549e971872192d4e890e8683d32acbd, type: 2}
-  - {fileID: 11400000, guid: f8b7ba2ffc4ce3741bc2384425153e00, type: 2}
+  - {fileID: 11400000, guid: 2008ef4e77932864f8d765a5cd3b93bc, type: 2}
+  - {fileID: 11400000, guid: 0d46a1f4cefd1da42939c4e07b1e14d3, type: 2}
+  - {fileID: 11400000, guid: 199fac5042a039b4bbeaa5d469fd8a19, type: 2}
+  - {fileID: 11400000, guid: 44f3bae8ed084d349b77945fdd249cb4, type: 2}
   currentSauce: {fileID: 0}
   wantedSauces: []
 --- !u!212 &291569041
@@ -2383,7 +2384,6 @@ GameObject:
   - component: {fileID: 8487741568042627569}
   - component: {fileID: 8820827350636324485}
   - component: {fileID: 674759229040333942}
-  - component: {fileID: 2101580703036845666}
   - component: {fileID: 3861696987707692555}
   m_Layer: 0
   m_Name: Rice Display
@@ -2392,19 +2392,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2101580703036845666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878959446709983312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b097e073db300904b96ae41dd62d8eed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  playerView: {fileID: 1676977841}
 --- !u!33 &2491889746390235778
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2636,6 +2623,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 439130471}
     m_Modifications:
+    - target: {fileID: 772941511505261475, guid: 7df53cae199647f4fa49c42a2c1c9c1d, type: 3}
+      propertyPath: 'menuItems.Array.data[0]'
+      value: 
+      objectReference: {fileID: 3322178545597086851, guid: f441b744d5e93d94cbbac0e08b303ebf, type: 3}
     - target: {fileID: 1321393086835863147, guid: 7df53cae199647f4fa49c42a2c1c9c1d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.1
