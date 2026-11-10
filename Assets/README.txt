@@ -1,5 +1,5 @@
 // Resources
-All art already in the game.
+All art already in the game, though unimplemented.
 
 Trello Link:
 https://trello.com/invite/b/6aac0114c4e7ebfe24262693/ATTI71e22b1ea2d2c68d886df50d1269519968FE12DD/team-based
